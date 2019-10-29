@@ -5,6 +5,7 @@ import HeritageField from './src/components/HeritageField';
 import ParagonPrimalField from './src/components/ParagonPrimalField';
 import SceneField from './src/components/SceneField';
 import ArchetypeField from './src/components/ArchetypeField';
+import AttributeField from './src/components/AttributeField';
 
 const App: () => React$Node = () => {
   return (
@@ -12,11 +13,12 @@ const App: () => React$Node = () => {
       <SafeAreaView style={{flex: 1, padding: 8, backgroundColor: '#ffffff'}}>
         <ScrollView>
           <Text>STARLIT CHARACTER CREATOR</Text>
-          <NameField />
+          <AttributeField />
+          {/* <NameField />
           <HeritageField />
           <ParagonPrimalField />
           <SceneField />
-          <ArchetypeField />
+          <ArchetypeField /> */}
         </ScrollView>
       </SafeAreaView>
     </>
