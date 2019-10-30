@@ -1,16 +1,16 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {Text, Button, View} from 'react-native';
 
-interface props {
-  Agility: Number;
-  Charisma: Number;
-  Constitution: Number;
-  Dexterity: Number;
-  Intelligence: Number;
-  Perception: Number;
-  Strength: Number;
-  Will: Number;
-}
+// interface props {
+//   Agility: Number;
+//   Charisma: Number;
+//   Constitution: Number;
+//   Dexterity: Number;
+//   Intelligence: Number;
+//   Perception: Number;
+//   Strength: Number;
+//   Will: Number;
+// }
 // const attributesObject = [
 //   {Agility: 0},
 //   {Charisma: 0},
@@ -112,6 +112,40 @@ const AttributeField = (props: props) => {
       <Button
         title="roll Will"
         onPress={() => {
+          setWill((will = Math.floor(Math.random() * (max - min + 1) + min)));
+        }}
+      />
+
+      <Button
+        title="roll All"
+        onPress={() => {
+          setAgility(
+            (agility = Math.floor(Math.random() * (max - min + 1) + min)),
+          );
+          setCharisma(
+            (charisma = Math.floor(Math.random() * (max - min + 1) + min)),
+          );
+
+          setConstitution(
+            (constitution = Math.floor(Math.random() * (max - min + 1) + min)),
+          );
+
+          setDexterity(
+            (dexterity = Math.floor(Math.random() * (max - min + 1) + min)),
+          );
+
+          setIntelligence(
+            (intelligence = Math.floor(Math.random() * (max - min + 1) + min)),
+          );
+
+          setPerception(
+            (perception = Math.floor(Math.random() * (max - min + 1) + min)),
+          );
+
+          setStrength(
+            (strength = Math.floor(Math.random() * (max - min + 1) + min)),
+          );
+
           setWill((will = Math.floor(Math.random() * (max - min + 1) + min)));
         }}
       />
