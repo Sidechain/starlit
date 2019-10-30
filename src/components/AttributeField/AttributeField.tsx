@@ -11,26 +11,30 @@ interface props {
   Strength: Number;
   Will: Number;
 }
-const attributeArray = [
-  'Agility',
-  'Charisma',
-  'Constitution',
-  'Dexterity',
-  'Intelligence',
-  'Perception',
-  'Strength',
-  'Will',
+const attributesObject = [
+  {Agility: 0},
+  {Charisma: 0},
+  {Constitution: 0},
+  {Dexterity: 0},
+  {Intelligence: 0},
+  {Perception: 0},
+  {Strength: 0},
+  {Will: 0},
 ];
+
+// const drawItems = () => {};
 
 const AttributeField = (props: props) => {
   return (
-    <>
-      {attributeArray.map(attribute => {
+    <View>
+      {attributesObject.map(e => {
         return (
-          <View>
-            <Text>{attribute}: </Text>
-            <Button title={`Roll ${attribute}`} onPress={() => null} />
-          </View>
+          <>
+            <Text>
+              {Object.keys(e)} {Object.values(e)}
+            </Text>
+            <Button title={`increase ${Object.keys(e)}`} onPress={() => null} />
+          </>
         );
       })}
       {/* <Text>Agility: {attributes.Agility}</Text>
@@ -56,7 +60,7 @@ const AttributeField = (props: props) => {
 
       <Text>Will: {attributes.Will}</Text>
       <Button title="roll Will" onPress={() => null} /> */}
-    </>
+    </View>
   );
 };
 
