@@ -1,11 +1,14 @@
+
 import React, { useState, useEffect } from 'react';
 import { Text, View } from 'react-native';
 
+import CharacterImage from '../../components/CharacterImage'; 
 import NameField from '../../components/NameField';
 import HeritageField from '../../components/HeritageField';
 import ParagonPrimalField from '../../components/ParagonPrimalField';
 import BackgroundField from '../../components/SceneField';
 import ArchetypeField from '../../components/ArchetypeField';
+
 
 interface Props {}
 
@@ -20,6 +23,7 @@ function CharacterInfoScreen(props: Props) {
   return (
     <View>
     {console.log(`Name: ${name}, heritage: ${heritage}, paragon/primal: ${paragonPrimal}, background: ${background}, archetype: ${archetype}`)}
+      <CharacterImage />
       <Text>WHO R U</Text>
       <NameField setName={setName}/>
       <HeritageField setHeritage={setHeritage}/>

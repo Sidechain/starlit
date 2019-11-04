@@ -11,10 +11,10 @@ function StartScreen(props: Props) {
       style={{
         flex: 1,
         backgroundColor: 'black',
-        alignContent: 'center',
+        alignItems: 'center',
         justifyContent: 'center',
       }}>
-      <Image source={require('../../assets/starlitlogo.png')} />
+      <Image source={require('../../assets/starlitlogo2.png')} />
     </View>
   );
 }
