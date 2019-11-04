@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1054444043504",
+    "firebase_url": "https://starlit-dev.firebaseio.com",
+    "project_id": "starlit-dev",
+    "storage_bucket": "starlit-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1054444043504:android:e8e4bf31f1e7a950bb5635",
+        "android_client_info": {
+          "package_name": "com.starlit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1054444043504-7m7vr4m7dr4rbojb075e4fjvsaclqo5j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCW6paltKi942-ikpMRzMpL0ODwDbx84sI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1054444043504-7m7vr4m7dr4rbojb075e4fjvsaclqo5j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
