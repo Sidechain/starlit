@@ -19,10 +19,11 @@ function CharacterInfoScreen(props: Props) {
 
   return (
     <View>
+    {console.log(name)}
       <Text>WHO R U</Text>
-      <NameField/>
-      <HeritageField/>
-      <ParagonPrimalField/>
+      <NameField setName={setName}/>
+      <HeritageField setHeritage={setHeritage}/>
+      <ParagonPrimalField heritage={heritage} setParagonPrimal={setParagonPrimal}/>
       <BackgroundField/>
       <ArchetypeField/>
     </View>

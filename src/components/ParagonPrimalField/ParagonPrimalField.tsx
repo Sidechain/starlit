@@ -1,7 +1,12 @@
 import React from 'react';
 import {TextField} from 'react-native-material-textfield';
 
-const ParagonPrimalField = () => {
+interface Props {
+  setParagonPrimal: any
+  heritage: string
+}
+
+const ParagonPrimalField = (props:Props) => {
   return (
     <TextField
       label="Paragon Sign / Primal Year"
