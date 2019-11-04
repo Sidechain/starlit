@@ -69,15 +69,16 @@ export default class App extends React.Component {
   );
 
   render() {
+    let activeTab  = this.state.activeTab 
     return (
       <View style={{flex: 1}}>
         <View style={{flex: 1}}>
-          {this.state.activeTab === 'start' && <StartScreen />}
-          {this.state.activeTab === 'attribute' && <AttributeScreen />}
-          {this.state.activeTab == 'info' && <CharacterInfoScreen />}
-          {this.state.activeTab == 'equipment' && <EquipmentScreen />}
-          {this.state.activeTab == 'merit' && <MeritScreen />}
-          {this.state.activeTab == 'skill' && <SkillScreen />}
+          {activeTab === 'start' && <Text>HELLO!</Text>}
+          {activeTab === 'attribute' && <AttributeScreen />}
+          {activeTab == 'info' && <CharacterInfoScreen />}
+          {activeTab == 'equipment' && <EquipmentScreen />}
+          {activeTab == 'merit' && <MeritScreen />}
+          {activeTab == 'skill' && <SkillScreen />}
         </View>
         <BottomNavigation
           onTabPress={newTab => this.setState({activeTab: newTab.key})}

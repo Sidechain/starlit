@@ -1,9 +1,13 @@
 import React from 'react';
 import {TextField} from 'react-native-material-textfield';
 
-const NameField = () => {
+interface Props {
+  setName: any
+}
+
+const NameField = (props:Props) => {
   return (
-    <TextField label="Character Name" placeholder="Your character's name" />
+    <TextField label="Character Name" placeholder="Your character's name" onChangeText={props.setName}/>
   );
 };
 
