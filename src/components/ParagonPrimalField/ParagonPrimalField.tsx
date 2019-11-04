@@ -1,6 +1,8 @@
 import React from 'react';
 import {TextField} from 'react-native-material-textfield';
 
+import { paragons, primals } from '../../utils/paragonPrimals'
+
 interface Props {
   setParagonPrimal: any
   heritage: string
