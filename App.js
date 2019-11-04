@@ -1,18 +1,20 @@
-import React, { Props } from 'react';
+import React, {Props} from 'react';
 import {Text, View} from 'react-native';
 import BottomNavigation, {
   ShiftingTab,
 } from 'react-native-material-bottom-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-
-interface State {}
+import AttributeScreen from './src/screens/AttributeScreen';
+import CharacterInfoScreen from './src/screens/CharacterInfoScreen';
+import EquipmentScreen from './src/screens/EquipmentScreen';
+import MeritScreen from './src/screens/MeritScreen';
+import SkillScreen from './src/screens/SkillScreen';
 
 export default class App extends React.Component {
-  constructor (props: any) {
-    super(props)
-    this.state = { activeTab: 'start' }
+  constructor(props) {
+    super(props);
+    this.state = {activeTab: 'start'};
   }
-
 
   tabs = [
     {
@@ -30,7 +32,7 @@ export default class App extends React.Component {
       pressColor: 'rgba(255, 255, 255, 0.16)',
     },
     {
-      key: 'mattribute',
+      key: 'attribute',
       icon: 'book',
       label: 'Attributes',
       barColor: '#c600dc',
@@ -69,7 +71,12 @@ export default class App extends React.Component {
     return (
       <View style={{flex: 1}}>
         <View style={{flex: 1}}>
-          {this.state.activeTab === 'start'}
+          {this.state.activeTab === 'start' && <Text>HELLO!</Text>}
+          {this.state.activeTab === 'attribute' && <AttributeScreen />}
+          {this.state.activeTab == 'info' && <CharacterInfoScreen />}
+          {this.state.activeTab == 'equipment' && <EquipmentScreen />}
+          {this.state.activeTab == 'merit' && <MeritScreen />}
+          {this.state.activeTab == 'skill' && <SkillScreen />}
         </View>
         <BottomNavigation
           onTabPress={newTab => this.setState({activeTab: newTab.key})}

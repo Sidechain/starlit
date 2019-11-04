@@ -1,13 +1,12 @@
-import React from 'react'
+import React from 'react';
+import {Text} from 'react-native';
 
 interface Props {}
 
 function SkillScreen(props: Props) {
-    const {} = props
+  const {} = props;
 
-    return (
-        
-    )
+  return <Text>MOMMY SAYS IMA SKILL</Text>;
 }
 
-export default SkillScreen
+export default SkillScreen;
