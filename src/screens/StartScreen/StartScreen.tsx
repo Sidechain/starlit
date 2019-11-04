@@ -3,10 +3,10 @@ import {Text} from 'react-native';
 
 interface Props {}
 
-function MeritScreen(props: Props) {
+function StartScreen(props: Props) {
   const {} = props;
 
-  return <Text>IMA MERIT</Text>;
+  return <Text>Hai thur</Text>;
 }
 
-export default MeritScreen;
+export default StartScreen;
