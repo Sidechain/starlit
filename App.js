@@ -9,6 +9,7 @@ import CharacterInfoScreen from './src/screens/CharacterInfoScreen';
 import EquipmentScreen from './src/screens/EquipmentScreen';
 import MeritScreen from './src/screens/MeritScreen';
 import SkillScreen from './src/screens/SkillScreen';
+import StartScreen from './src/screens/StartScreen';
 
 export default class App extends React.Component {
   constructor(props) {
