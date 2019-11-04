@@ -73,7 +73,7 @@ export default class App extends React.Component {
     return (
       <View style={{flex: 1}}>
         <View style={{flex: 1}}>
-          {activeTab === 'start' && <Text>HELLO!</Text>}
+          {activeTab === 'start' && <StartScreen/>}
           {activeTab === 'attribute' && <AttributeScreen />}
           {activeTab == 'info' && <CharacterInfoScreen />}
           {activeTab == 'equipment' && <EquipmentScreen />}
