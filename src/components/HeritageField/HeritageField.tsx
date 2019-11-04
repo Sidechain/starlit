@@ -1,7 +1,11 @@
 import React from 'react';
-import {Dropdown} from 'react-native-material-dropdown';
+import { Dropdown } from 'react-native-material-dropdown';
 
-const HeritageField = () => {
+interface Props {
+  setHeritage: any
+}
+
+const HeritageField = (props:Props) => {
   let raceData = [
     {
       value: 'Human',
@@ -13,7 +17,7 @@ const HeritageField = () => {
       value: 'Orc',
     },
   ];
-  return <Dropdown label="Cultural Heritage" data={raceData} />;
+  return <Dropdown label="Cultural Heritage" data={raceData} onChangeText={props.setHeritage} />;
 };
 
 export default HeritageField;
