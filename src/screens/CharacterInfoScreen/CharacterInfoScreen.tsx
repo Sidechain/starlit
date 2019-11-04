@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Text, View} from 'react-native';
+import {View} from 'react-native';
 
 import CharacterImage from '../../components/CharacterImage';
 import NameField from '../../components/NameField';

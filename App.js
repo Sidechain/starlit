@@ -1,5 +1,5 @@
-import React, {Props} from 'react';
-import {Text, View} from 'react-native';
+import React from 'react';
+import {View} from 'react-native';
 import BottomNavigation, {
   ShiftingTab,
 } from 'react-native-material-bottom-navigation';
@@ -75,7 +75,7 @@ export default class App extends React.Component {
         <View style={{flex: 1}}>
           {activeTab === 'start' && <StartScreen/>}
           {activeTab === 'attribute' && <AttributeScreen />}
-          {activeTab == 'info' && <CharacterInfoScreen />}
+          {activeTab == 'info' && <CharacterInfoScreen/>}
           {activeTab == 'equipment' && <EquipmentScreen />}
           {activeTab == 'merit' && <MeritScreen />}
           {activeTab == 'skill' && <SkillScreen />}

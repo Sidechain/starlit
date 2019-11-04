@@ -1,27 +1,6 @@
 import React, {useState} from 'react';
 import {Text, Button, View} from 'react-native';
 
-// interface props {
-//   Agility: Number;
-//   Charisma: Number;
-//   Constitution: Number;
-//   Dexterity: Number;
-//   Intelligence: Number;
-//   Perception: Number;
-//   Strength: Number;
-//   Will: Number;
-// }
-// const attributesObject = [
-//   {Agility: 0},
-//   {Charisma: 0},
-//   {Constitution: 0},
-//   {Dexterity: 0},
-//   {Intelligence: 0},
-//   {Perception: 0},
-//   {Strength: 0},
-//   {Will: 0},
-// ];
-
 const max = 18;
 const min = 3;
 

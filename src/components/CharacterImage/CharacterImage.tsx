@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Dimensions, TouchableHighlight, Text, Image} from 'react-native';
+import {Dimensions, TouchableHighlight, Image} from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 
 const CharacterImage = () => {
