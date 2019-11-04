@@ -1,12 +1,12 @@
 import React from 'react';
-import {Text} from 'react-native';
+import CharacterImage from '../../components/CharacterImage';
 
 interface Props {}
 
 function CharacterInfoScreen(props: Props) {
   const {} = props;
 
-  return <Text>WHO R U</Text>;
+  return <CharacterImage />;
 }
 
 export default CharacterInfoScreen;
