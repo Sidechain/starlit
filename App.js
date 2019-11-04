@@ -9,6 +9,7 @@ import CharacterInfoScreen from './src/screens/CharacterInfoScreen';
 import EquipmentScreen from './src/screens/EquipmentScreen';
 import MeritScreen from './src/screens/MeritScreen';
 import SkillScreen from './src/screens/SkillScreen';
+import StartScreen from './src/screens/StartScreen';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -71,7 +72,7 @@ export default class App extends React.Component {
     return (
       <View style={{flex: 1}}>
         <View style={{flex: 1}}>
-          {this.state.activeTab === 'start' && <Text>HELLO!</Text>}
+          {this.state.activeTab === 'start' && <StartScreen />}
           {this.state.activeTab === 'attribute' && <AttributeScreen />}
           {this.state.activeTab == 'info' && <CharacterInfoScreen />}
           {this.state.activeTab == 'equipment' && <EquipmentScreen />}
