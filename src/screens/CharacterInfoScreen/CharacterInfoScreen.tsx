@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Text, View } from 'react-native';
 
 import NameField from '../../components/NameField';
@@ -19,13 +19,13 @@ function CharacterInfoScreen(props: Props) {
 
   return (
     <View>
-    {console.log(name)}
+    {console.log(`Name: ${name}, heritage: ${heritage}, paragon/primal: ${paragonPrimal}, background: ${background}, archetype: ${archetype}`)}
       <Text>WHO R U</Text>
       <NameField setName={setName}/>
       <HeritageField setHeritage={setHeritage}/>
       <ParagonPrimalField heritage={heritage} setParagonPrimal={setParagonPrimal}/>
-      <BackgroundField/>
-      <ArchetypeField/>
+      <BackgroundField setBackground={setBackground}/>
+      <ArchetypeField setArchetype={setArchetype}/>
     </View>
   )
 }

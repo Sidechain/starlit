@@ -1,34 +1,14 @@
 import React from 'react';
-import {Dropdown} from 'react-native-material-dropdown';
+import { Dropdown } from 'react-native-material-dropdown';
 
-const SceneField = () => {
-  let sceneData = [
-    {
-      value: 'City',
-    },
-    {
-      value: 'Cloister',
-    },
-    {
-      value: 'Coastal',
-    },
-    {
-      value: 'Court',
-    },
-    {
-      value: 'Nature',
-    },
-    {
-      value: 'Rural',
-    },
-    {
-      value: 'Studies',
-    },
-    {
-      value: 'Underworld',
-    },
-  ];
-  return <Dropdown label="Background Scene" data={sceneData} />;
+import { backgroundScenes } from '../../utils/characterInfoData'
+
+interface Props {
+  setBackground: any
+}
+
+const SceneField = (props: Props) => {
+  return <Dropdown label="Background Scene" data={backgroundScenes} onChangeText={props.setBackground}/>;
 };
 
 export default SceneField;

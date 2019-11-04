@@ -96,3 +96,54 @@ export const  primals = [
       value: 'Serpent',
     }
   ]
+
+export const archetypes = [
+  {
+    value: 'Craftsman',
+  },
+  {
+    value: 'Entertainer',
+  },
+  {
+    value: 'Mage',
+  },
+  {
+    value: 'Scholar',
+  },
+  {
+    value: 'Scoundrel',
+  },
+  {
+    value: 'Scout',
+  },
+  {
+    value: 'Soldier',
+  },
+];
+
+export const backgroundScenes = [
+  {
+    value: 'City',
+  },
+  {
+    value: 'Cloister',
+  },
+  {
+    value: 'Coastal',
+  },
+  {
+    value: 'Court',
+  },
+  {
+    value: 'Nature',
+  },
+  {
+    value: 'Rural',
+  },
+  {
+    value: 'Studies',
+  },
+  {
+    value: 'Underworld',
+  },
+];
