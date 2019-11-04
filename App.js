@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { Props } from 'react';
 import {Text, View} from 'react-native';
 import BottomNavigation, {
   ShiftingTab,
 } from 'react-native-material-bottom-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
+interface State {}
+
 export default class App extends React.Component {
+  constructor (props: any) {
+    super(props)
+    this.state = { activeTab: 'start' }
+  }
+
+
   tabs = [
     {
       key: 'start',
@@ -61,7 +69,7 @@ export default class App extends React.Component {
     return (
       <View style={{flex: 1}}>
         <View style={{flex: 1}}>
-          {/* Your screen contents depending on current tab. */}
+          {this.state.activeTab === 'start'}
         </View>
         <BottomNavigation
           onTabPress={newTab => this.setState({activeTab: newTab.key})}
