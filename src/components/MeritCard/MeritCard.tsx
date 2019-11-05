@@ -44,7 +44,7 @@ const dataArray = [
     title: 'Artist I-III',
     avatar: 'broom',
     content:
-      'Add 1, 2, or 4 to rolls of one creative skill of your choice. This merit may be taken more times, each time for a different skill',
+      'Add 1, 2, or 4 to rolls of one creative skill of your choice. This merit may be taken more times, each time for a different skill.',
   },
   {
     title: 'Artistic (II)',
@@ -76,6 +76,72 @@ const dataArray = [
     title: 'Contact',
     avatar: 'hands-helping',
     content: '',
+  },
+  {
+    title: 'Coolheaded I-III',
+    avatar: 'snowflake',
+    content: 'Add 1, 2, or 4 to your Initiative rolls.',
+  },
+  {
+    title: 'Great Exertion II-III',
+    avatar: 'star-of-life',
+    content:
+      'Each instance adds +1 to the bonus granted when spending an exertion point.',
+  },
+  {
+    title: 'Enchanted Item II or IV',
+    avatar: 'magic',
+    content:
+      'The character has an enchanted item in its possession. The II instance of this merit grants the character a Civilian grade enchanted item, and the IV instance grants a Professional grade item. This item is created together with the GM.',
+  },
+  {
+    title: 'Extraordinary Attribute I-IV',
+    avatar: 'haykal',
+    content:
+      'Add 1, 2, 3, or 4 to an attribute. This merit may be taken more times, each time for a different attribute. Attributes may, however, never exceed 20.',
+  },
+  {
+    title: 'Fame (I-III)',
+    avatar: 'star',
+    content: '',
+  },
+  {
+    title: 'Fleet of Foot I-III',
+    avatar: 'running',
+    content: 'Add 1, 2, or 3 metres to your movement speed.',
+  },
+  {
+    title: 'Intellectual (II)',
+    avatar: 'university',
+    content: 'Add +1 to all knowledge skill rolls.',
+  },
+  {
+    title: 'Knowledgeable I-III',
+    avatar: 'book-reader',
+    content:
+      'Add 1, 2, or 4 to rolls of one knowledge skill. This merit may be taken more times, each time for a different knowledge skill.',
+  },
+  {
+    title: 'Linguist I-III',
+    avatar: 'comments',
+    content:
+      'Add 1, 2, or 4 to one language skill. This merit may be taken more times, each time for a different language.',
+  },
+  {
+    title: 'Occultist (II)',
+    avatar: 'crow',
+    content: 'Add +1 to all magic skill rolls, if they are developed.',
+  },
+  {
+    title: 'Mentor (III)',
+    avatar: 'glasses',
+    content: '',
+  },
+  {
+    title: 'Natural Immunity I-II',
+    avatar: 'leaf',
+    content:
+      'Add 2 or 4 to the onset difficulty for disease and poison. (See the rules for Poison and Disease).',
   },
 ];
 
@@ -115,7 +181,7 @@ function _renderContent(item: any) {
 
 const MeritCard = () => {
   return (
-    <ScrollView>
+    <ScrollView style={{flex: 1}}>
       <Container>
         <Content padder style={{backgroundColor: 'white'}}>
           <Accordion
