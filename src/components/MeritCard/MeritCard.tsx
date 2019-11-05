@@ -1,5 +1,13 @@
 import React from 'react';
-import {Container, Header, Content, Accordion, Text, View} from 'native-base';
+import {
+  Container,
+  Header,
+  Content,
+  Accordion,
+  Text,
+  View,
+  CheckBox,
+} from 'native-base';
 
 import {TouchableOpacity, ScrollView} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
@@ -81,11 +89,12 @@ function _renderHeader(item: any, expanded: any) {
         alignItems: 'center',
         backgroundColor: '#A9DAD6',
       }}>
+      <CheckBox />
       <Text style={{fontWeight: '600'}}> {item.title}</Text>
       {expanded ? (
-        <Icon style={{fontSize: 18}} name="remove-circle" />
+        <Icon style={{fontSize: 18}} name="chevron-circle-up" />
       ) : (
-        <Icon style={{fontSize: 18}} name="add-circle" />
+        <Icon style={{fontSize: 18}} name="chevron-circle-down" />
       )}
     </View>
   );
@@ -108,7 +117,6 @@ const MeritCard = () => {
   return (
     <ScrollView>
       <Container>
-        <Header />
         <Content padder style={{backgroundColor: 'white'}}>
           <Accordion
             dataArray={dataArray}
