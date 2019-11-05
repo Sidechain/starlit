@@ -1,12 +1,19 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {Text, View} from 'react-native';
+import { TextField } from 'react-native-material-textfield';
 
 interface Props {}
 
 function SkillScreen(props: Props) {
   const {} = props;
 
-  return <Text>MOMMY SAYS IMA SKILL</Text>;
+  return (
+    <View>
+      
+    </View>
+    
+    
+  );
 }
 
 export default SkillScreen;
