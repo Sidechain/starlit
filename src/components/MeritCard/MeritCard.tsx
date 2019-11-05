@@ -1,88 +1,124 @@
 import React from 'react';
-import {Card, ListItem, Button, Avatar} from 'react-native-elements';
+import {Container, Header, Content, Accordion, Text, View} from 'native-base';
+
 import {TouchableOpacity, ScrollView} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
-const merits = [
+const dataArray = [
   {
-    name: 'Acrobatic I-III',
+    title: 'Acrobatic I-III',
     avatar: 'snowboarding',
-    text: 'Add 1, 2, or 4 to your Acrobatics rolls.',
+    content: 'Add 1, 2, or 4 to your Acrobatics rolls.',
   },
   {
-    name: 'Ally (II)',
+    title: 'Ally (II)',
     avatar: 'handshake',
-    text: '',
+    content: '',
   },
   {
-    name: 'Ancient Bloodline',
+    title: 'Ancient Bloodline',
     avatar: 'tint',
-    text:
+    content:
       'As a Mir of a bloodline of yore, you have a +2 bonus when socially interacting with tairethi or mir that knows of your heritage.',
   },
   {
-    name: 'Animal Affinity',
+    title: 'Animal Affinity',
     avatar: 'otter',
-    text:
+    content:
       'Animals are more positively inclined towards the character. Add +1 when socially interacting with animals.',
   },
   {
-    name: 'Animal Companion I-III',
+    title: 'Animal Companion I-III',
     avatar: 'dog',
-    text: '',
+    content: '',
   },
   {
-    name: 'Artist I-III',
+    title: 'Artist I-III',
     avatar: 'broom',
-    text:
+    content:
       'Add 1, 2, or 4 to rolls of one creative skill of your choice. This merit may be taken more times, each time for a different skill',
   },
   {
-    name: 'Artistic (II)',
+    title: 'Artistic (II)',
     avatar: 'brush',
-    text: 'Add +1 to all creative skill rolls.',
+    content: 'Add +1 to all creative skill rolls.',
   },
   {
-    name: 'Athletic I-III',
+    title: 'Athletic I-III',
     avatar: 'volleyball-ball',
-    text: 'Add 1, 2, or 4 to your Athletics rolls.',
+    content: 'Add 1, 2, or 4 to your Athletics rolls.',
   },
   {
-    name: 'By Any Means Necessary I-IV',
+    title: 'By Any Means Necessary I-IV',
     avatar: 'fist-raised',
-    text:
+    content:
       'Each instance of this merit allows a character to spend an extra exertion point per action.',
   },
   {
-    name: 'Charismatic (II)',
+    title: 'Charismatic (II)',
     avatar: 'certificate',
-    text: 'Add +1 to all social skill rolls.',
+    content: 'Add +1 to all social skill rolls.',
   },
   {
-    name: 'Combatant (II)',
+    title: 'Combatant (II)',
     avatar: 'chess',
-    text: 'Add +1 to all combat skill rolls.',
+    content: 'Add +1 to all combat skill rolls.',
   },
   {
-    name: 'Contact',
+    title: 'Contact',
     avatar: 'hands-helping',
-    text: '',
+    content: '',
   },
 ];
+
+function _renderHeader(item: any, expanded: any) {
+  return (
+    <View
+      style={{
+        flexDirection: 'row',
+        padding: 10,
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        backgroundColor: '#A9DAD6',
+      }}>
+      <Text style={{fontWeight: '600'}}> {item.title}</Text>
+      {expanded ? (
+        <Icon style={{fontSize: 18}} name="remove-circle" />
+      ) : (
+        <Icon style={{fontSize: 18}} name="add-circle" />
+      )}
+    </View>
+  );
+}
+
+function _renderContent(item: any) {
+  return (
+    <Text
+      style={{
+        backgroundColor: '#e3f1f1',
+        padding: 10,
+        fontStyle: 'italic',
+      }}>
+      {item.content}
+    </Text>
+  );
+}
 
 const MeritCard = () => {
   return (
     <ScrollView>
-      {merits.map((u, i) => {
-        return (
-          <TouchableOpacity>
-            <Card containerStyle={{padding: 0}}>
-              <Icon name={u.avatar} size={20} />
-              <ListItem key={i} title={u.name} />
-            </Card>
-          </TouchableOpacity>
-        );
-      })}
+      <Container>
+        <Header />
+        <Content padder style={{backgroundColor: 'white'}}>
+          <Accordion
+            dataArray={dataArray}
+            animation={true}
+            expanded={true}
+            renderHeader={_renderHeader}
+            renderContent={_renderContent}
+          />
+        </Content>
+      </Container>
     </ScrollView>
   );
 };
