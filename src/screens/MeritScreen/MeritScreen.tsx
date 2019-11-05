@@ -1,12 +1,13 @@
 import React from 'react';
-import {Text} from 'react-native';
+import MeritCard from '../../components/MeritCard';
+import {ScrollView, View} from 'react-native';
 
 interface Props {}
 
 function MeritScreen(props: Props) {
   const {} = props;
 
-  return <Text>IMA MERIT</Text>;
+  return <MeritCard />;
 }
 
 export default MeritScreen;
