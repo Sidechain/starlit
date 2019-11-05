@@ -14,21 +14,25 @@ function CharacterInfoScreen(props: Props) {
   const {} = props;
   const [name, setName] = useState('');
   const [heritage, setHeritage] = useState('');
-  const [paragonPrimal, setParagonPrimal] = useState('');
+  const [paragon, setParagon] = useState('');
   const [background, setBackground] = useState('');
   const [archetype, setArchetype] = useState('');
+  const [season, setSeason] = useState('');
+  const [primal, setPrimal] = useState('');
 
   return (
     <View style={{flex: 1, alignSelf: 'center'}}>
-      {console.log(
+      {/* {console.log(
         `Name: ${name}, heritage: ${heritage}, paragon/primal: ${paragonPrimal}, background: ${background}, archetype: ${archetype}`,
-      )}
+      )} */}
       <CharacterImage />
       <NameField setName={setName} />
       <HeritageField setHeritage={setHeritage} />
       <ParagonPrimalField
         heritage={heritage}
-        setParagonPrimal={setParagonPrimal}
+        setParagon={setParagon}
+        setPrimal={setPrimal}
+        setSeason={setSeason}
       />
       <BackgroundField setBackground={setBackground} />
       <ArchetypeField setArchetype={setArchetype} />

@@ -30,7 +30,6 @@ const CharacterImage = () => {
       }}
       underlayColor="#ccc"
       onPress={() => {
-        // Open Image Library:
         ImagePicker.launchImageLibrary(options, response => {
           if (response.didCancel) {
             console.log('User cancelled image picker');
@@ -40,9 +39,6 @@ const CharacterImage = () => {
             console.log('User tapped custom button: ', response.customButton);
           } else {
             const source = {uri: response.uri};
-
-            // You can also display the image using data:
-            // const source = { uri: 'data:image/jpeg;base64,' + response.data };
 
             setAvatar(source);
           }
