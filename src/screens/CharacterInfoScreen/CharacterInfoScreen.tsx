@@ -22,9 +22,6 @@ function CharacterInfoScreen(props: Props) {
 
   return (
     <View style={{flex: 1, alignSelf: 'center'}}>
-      {/* {console.log(
-        `Name: ${name}, heritage: ${heritage}, paragon/primal: ${paragonPrimal}, background: ${background}, archetype: ${archetype}`,
-      )} */}
       <CharacterImage />
       <NameField setName={setName} />
       <HeritageField setHeritage={setHeritage} />
