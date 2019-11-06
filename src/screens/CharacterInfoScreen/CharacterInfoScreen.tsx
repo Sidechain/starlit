@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import {View} from 'react-native';
+import {View, TouchableOpacity, ScrollView} from 'react-native';
+import { NavigationActions } from 'react-navigation';
 
 import CharacterImage from '../../components/CharacterImage';
 import NameField from '../../components/NameField';
@@ -7,6 +8,7 @@ import HeritageField from '../../components/HeritageField';
 import ParagonPrimalField from '../../components/ParagonPrimalField';
 import BackgroundField from '../../components/SceneField';
 import ArchetypeField from '../../components/ArchetypeField';
+import { Button } from 'native-base';
 
 interface Props {}
 
@@ -20,8 +22,15 @@ function CharacterInfoScreen(props: Props) {
   const [season, setSeason] = useState('');
   const [primal, setPrimal] = useState('');
 
+  const navigateToAttributes = () => NavigationActions.navigate({
+      routeName: 'Attribute', 
+      params: {},
+      action: NavigationActions.navigate({ routeName: 'Attribute' })}
+  )
+
   return (
-    <View style={{flex: 1, alignSelf: 'center'}}>
+    <ScrollView style={{flex: 1, alignSelf: 'center'}}>
+      <Button onPress={props.navigation.dispatch(navigateToAttributes)}/>
       <CharacterImage />
       <NameField setName={setName} />
       <HeritageField setHeritage={setHeritage} />
@@ -33,7 +42,7 @@ function CharacterInfoScreen(props: Props) {
       />
       <BackgroundField setBackground={setBackground} />
       <ArchetypeField setArchetype={setArchetype} />
-    </View>
+    </ScrollView>
   );
 }
 
