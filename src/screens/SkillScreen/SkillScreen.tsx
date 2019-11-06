@@ -1,15 +1,17 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Text, View, Button} from 'react-native';
 import { TextField } from 'react-native-material-textfield';
 import { skills } from '../../utils/skillScreenData'
 
-interface Props {}
+interface Props {
+  navigationData: Object
+}
 
 function SkillScreen(props: Props) {
-  const {} = props;
-
+  const navigateToMerits = () => props.navigationData.navigate('Merit')
   return (
     <View style={{flex: 1, flexWrap: 'wrap'}}>
+      <Button onPress={navigateToMerits}/>
       <View>
         <View>
           <Text style={{fontSize: 16}}>Athletics Skills</Text>

@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {View, TouchableOpacity, ScrollView} from 'react-native';
+import React, {useState, Component} from 'react';
+import {View, TouchableOpacity, ScrollView, Text} from 'react-native';
 import { NavigationActions } from 'react-navigation';
 
 import CharacterImage from '../../components/CharacterImage';
@@ -13,7 +13,6 @@ import { Button } from 'native-base';
 interface Props {}
 
 function CharacterInfoScreen(props: Props) {
-  const {} = props;
   const [name, setName] = useState('');
   const [heritage, setHeritage] = useState('');
   const [paragon, setParagon] = useState('');
@@ -22,15 +21,11 @@ function CharacterInfoScreen(props: Props) {
   const [season, setSeason] = useState('');
   const [primal, setPrimal] = useState('');
 
-  const navigateToAttributes = () => NavigationActions.navigate({
-      routeName: 'Attribute', 
-      params: {},
-      action: NavigationActions.navigate({ routeName: 'Attribute' })}
-  )
+  const navigateToAttribute = () => props.navigation.navigate('Attribute')
 
   return (
     <ScrollView style={{flex: 1, alignSelf: 'center'}}>
-      <Button onPress={props.navigation.dispatch(navigateToAttributes)}/>
+      <Button onPress={navigateToAttribute}/>
       <CharacterImage />
       <NameField setName={setName} />
       <HeritageField setHeritage={setHeritage} />
@@ -45,5 +40,32 @@ function CharacterInfoScreen(props: Props) {
     </ScrollView>
   );
 }
-
 export default CharacterInfoScreen;
+
+
+// interface Props {}
+// interface State {}
+
+// class CharacterInfoScreen extends Component<Props, State> {
+//   constructor(props: Props) {
+//     super(props)
+
+//     this.state = {
+      
+//     }
+
+//   }
+
+//   render() {
+//     const navigateToSkill = () => this.props.navigation.navigate("Attribute")
+//     return (
+//       <>
+//         <Text>THIS IS THE PLACEHOLDER</Text>
+//          <Button onPress={navigateToSkill} /> 
+//       </>
+//     )
+//   }
+// }
+
+// export default CharacterInfoScreen
+

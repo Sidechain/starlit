@@ -179,7 +179,7 @@ function _renderContent(item: any) {
   );
 }
 
-const MeritCard = () => {
+const MeritCard = (props:any) => {
   return (
     <ScrollView style={{flex: 1}}>
       <Container>

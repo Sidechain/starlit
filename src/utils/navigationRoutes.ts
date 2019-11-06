@@ -24,16 +24,28 @@ const AppNavigator = createBottomTabNavigator(
 
 const CharacterCreationStack = createStackNavigator({
   Info: {
-    screen: CharacterInfoScreen
+    screen: CharacterInfoScreen,
+    navigationOptions: {
+      header: null
+    }
   },
   Attribute: {
-    screen: AttributeScreen
+    screen: AttributeScreen,
+    navigationOptions: {
+      header: null
+    }
   },
   Skill: {
-    screen: SkillScreen
+    screen: SkillScreen,
+    navigationOptions: {
+      header: null
+    }
   },
   Merit: {
-    screen: MeritScreen
+    screen: MeritScreen,
+    navigationOptions: {
+      header: null
+    }
   },
   
 });

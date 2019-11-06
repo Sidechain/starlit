@@ -6,7 +6,7 @@ interface Props {}
 function AttributeScreen(props: Props) {
   const {} = props;
 
-  return <AttributeField />;
+  return <AttributeField navigationData={props.navigation}/>;
 }
 
 export default AttributeScreen;
