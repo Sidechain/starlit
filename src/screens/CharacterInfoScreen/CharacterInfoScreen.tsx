@@ -7,6 +7,7 @@ import HeritageField from '../../components/HeritageField';
 import ParagonPrimalField from '../../components/ParagonPrimalField';
 import BackgroundField from '../../components/SceneField';
 import ArchetypeField from '../../components/ArchetypeField';
+import AgilityAction from '../../../Actions/AgilityAction.js';
 
 interface Props {}
 
@@ -36,6 +37,7 @@ function CharacterInfoScreen(props: Props) {
       />
       <BackgroundField setBackground={setBackground} />
       <ArchetypeField setArchetype={setArchetype} />
+      <AgilityAction />
     </View>
   );
 }
