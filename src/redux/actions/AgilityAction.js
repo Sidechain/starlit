@@ -1,7 +1,6 @@
 import {connect} from 'react-redux';
-
 import * as Actions from './ActionTypes';
-import AgilityComponent from '../Components/AgilityComponent';
+import AgilityComponent from '../components/AgilityComponent';
 
 const mapStateToProps = state => ({
   count: state.agilityReducer.count,

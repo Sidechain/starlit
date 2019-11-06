@@ -1,7 +1,7 @@
 import React from 'react';
 import {AppContainer} from './src/utils/navigationRoutes';
 import {Provider} from 'react-redux';
-import store from './Reducers/index';
+import store from './src/redux/reducers/index';
 
 export default class App extends React.Component {
   raiseAgility = () => {};

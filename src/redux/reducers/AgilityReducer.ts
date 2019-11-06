@@ -1,4 +1,4 @@
-import * as Actions from '../Actions/ActionTypes';
+import * as Actions from '../actions/ActionTypes';
 
 const AgilityReducer = (state = {count: 0}, action: any) => {
   switch (action.type) {

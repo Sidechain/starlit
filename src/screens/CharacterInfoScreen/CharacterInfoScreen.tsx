@@ -7,7 +7,7 @@ import HeritageField from '../../components/HeritageField';
 import ParagonPrimalField from '../../components/ParagonPrimalField';
 import BackgroundField from '../../components/SceneField';
 import ArchetypeField from '../../components/ArchetypeField';
-import AgilityAction from '../../../Actions/AgilityAction.js';
+import AgilityAction from '../../redux/actions/AgilityAction.js';
 
 interface Props {}
 
