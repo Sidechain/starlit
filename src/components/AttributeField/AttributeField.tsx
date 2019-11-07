@@ -5,7 +5,7 @@ const max = 18;
 const min = 3;
 
 interface Props {
-  
+  navigationData: Object
 }
 
 const AttributeField = (props: Props) => {
@@ -40,6 +40,8 @@ const AttributeField = (props: Props) => {
     etherRecovery: will > 10 ? attributeModifiers.willMod : 1,
     woundRecovery: constitution > 10 ? attributeModifiers.conMod : 1
   }
+
+  const navigateToSkill = () => props.navigationData.navigate('Skill')
   
   return (
     <View style={{flex: 1}}>
@@ -122,7 +124,7 @@ const AttributeField = (props: Props) => {
           setWill((Math.floor(Math.random() * (max - min + 1) + min)));
         }}
       />
-
+      <Button title="Submit and go to Skills" onPress={navigateToSkill} />
      
     </View>
   );

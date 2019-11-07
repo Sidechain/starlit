@@ -265,7 +265,7 @@ function _renderContent(item: any) {
   );
 }
 
-const MeritCard = () => {
+const MeritCard = (props:any) => {
   return (
     <Container>
       <Content padder style={{backgroundColor: 'white'}}>

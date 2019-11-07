@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {View} from 'react-native';
+import React, {useState, Component} from 'react';
+import {View, TouchableOpacity, ScrollView, Text, Button} from 'react-native';
 
 import CharacterImage from '../../components/CharacterImage';
 import NameField from '../../components/NameField';
@@ -11,7 +11,6 @@ import ArchetypeField from '../../components/ArchetypeField';
 interface Props {}
 
 function CharacterInfoScreen(props: Props) {
-  const {} = props;
   const [name, setName] = useState('');
   const [heritage, setHeritage] = useState('');
   const [paragon, setParagon] = useState('');
@@ -20,8 +19,10 @@ function CharacterInfoScreen(props: Props) {
   const [season, setSeason] = useState('');
   const [primal, setPrimal] = useState('');
 
+  const navigateToAttribute = () => props.navigation.navigate('Attribute')
+
   return (
-    <View style={{flex: 1, alignSelf: 'center'}}>
+    <ScrollView style={{flex: 1, alignSelf: 'center'}}>
       <CharacterImage />
       <NameField setName={setName} />
       <HeritageField setHeritage={setHeritage} />
@@ -33,8 +34,8 @@ function CharacterInfoScreen(props: Props) {
       />
       <BackgroundField setBackground={setBackground} />
       <ArchetypeField setArchetype={setArchetype} />
-    </View>
+      <Button title="Submit and go to Attributes" onPress={navigateToAttribute}/>
+    </ScrollView>
   );
 }
-
 export default CharacterInfoScreen;
