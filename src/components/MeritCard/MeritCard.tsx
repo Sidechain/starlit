@@ -1,15 +1,6 @@
 import React from 'react';
-import {
-  Container,
-  Header,
-  Content,
-  Accordion,
-  Text,
-  View,
-  CheckBox,
-} from 'native-base';
+import {Container, Content, Accordion, Text, View} from 'native-base';
 
-import {TouchableOpacity, ScrollView} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 const dataArray = [
