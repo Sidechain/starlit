@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Text} from 'native-base';
 import {TouchableOpacity, StyleSheet} from 'react-native';
 import CardFlip from 'react-native-card-flip';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 interface props {
   title: String;
@@ -16,11 +17,13 @@ class MeritCard extends Component<props> {
           style={styles.cardFront}
           onPress={() => this.card.flip()}>
           <Text>{this.props.title}</Text>
+          <Icon style={styles.arrow} name="angle-right" />
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.cardBack}
           onPress={() => this.card.flip()}>
           <Text>{this.props.content}</Text>
+          <Icon style={styles.arrow} name="angle-left" />
         </TouchableOpacity>
       </CardFlip>
     );
@@ -43,6 +46,15 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
+    // This is the bs code for ios, but who runs ios?!
+    // shadowColor: '#000',
+    // shadowOffset: {
+    //   width: 0,
+    //   height: 12,
+    // },
+    // shadowOpacity: 0.58,
+    // shadowRadius: 16.0,
+    elevation: 12,
   },
   cardBack: {
     flex: 1,
@@ -52,6 +64,14 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     borderWidth: 2,
     borderRadius: 10,
+    elevation: 12,
+  },
+  arrow: {
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+    padding: 10,
+    fontSize: 24,
   },
 });
 
