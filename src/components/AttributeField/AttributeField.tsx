@@ -124,7 +124,7 @@ const AttributeField = (props: Props) => {
           setWill((Math.floor(Math.random() * (max - min + 1) + min)));
         }}
       />
-      <Button title="lol" onPress={navigateToSkill} />
+      <Button title="Submit and go to Skills" onPress={navigateToSkill} />
      
     </View>
   );

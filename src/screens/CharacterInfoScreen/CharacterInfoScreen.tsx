@@ -1,5 +1,5 @@
 import React, {useState, Component} from 'react';
-import {View, TouchableOpacity, ScrollView, Text} from 'react-native';
+import {View, TouchableOpacity, ScrollView, Text, Button} from 'react-native';
 import { NavigationActions } from 'react-navigation';
 
 import CharacterImage from '../../components/CharacterImage';
@@ -8,7 +8,6 @@ import HeritageField from '../../components/HeritageField';
 import ParagonPrimalField from '../../components/ParagonPrimalField';
 import BackgroundField from '../../components/SceneField';
 import ArchetypeField from '../../components/ArchetypeField';
-import { Button } from 'native-base';
 
 interface Props {}
 
@@ -25,7 +24,7 @@ function CharacterInfoScreen(props: Props) {
 
   return (
     <ScrollView style={{flex: 1, alignSelf: 'center'}}>
-      <Button onPress={navigateToAttribute}/>
+      <Button title="Submit" onPress={navigateToAttribute}/>
       <CharacterImage />
       <NameField setName={setName} />
       <HeritageField setHeritage={setHeritage} />
@@ -41,31 +40,3 @@ function CharacterInfoScreen(props: Props) {
   );
 }
 export default CharacterInfoScreen;
-
-
-// interface Props {}
-// interface State {}
-
-// class CharacterInfoScreen extends Component<Props, State> {
-//   constructor(props: Props) {
-//     super(props)
-
-//     this.state = {
-      
-//     }
-
-//   }
-
-//   render() {
-//     const navigateToSkill = () => this.props.navigation.navigate("Attribute")
-//     return (
-//       <>
-//         <Text>THIS IS THE PLACEHOLDER</Text>
-//          <Button onPress={navigateToSkill} /> 
-//       </>
-//     )
-//   }
-// }
-
-// export default CharacterInfoScreen
-
