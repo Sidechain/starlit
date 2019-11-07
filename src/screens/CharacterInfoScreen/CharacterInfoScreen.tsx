@@ -19,7 +19,17 @@ function CharacterInfoScreen(props: Props) {
   const [season, setSeason] = useState('');
   const [primal, setPrimal] = useState('');
 
-  const navigateToAttribute = () => props.navigation.navigate('Attribute')
+  const info = {
+    name: name,
+    heritage: heritage,
+    paragon: paragon,
+    background: background,
+    archetype: archetype,
+    primal: primal,
+    season: season
+  }
+
+  const navigateToAttribute = () => props.navigation.navigate('Attribute', {characterInfo: info})
 
   return (
     <ScrollView>

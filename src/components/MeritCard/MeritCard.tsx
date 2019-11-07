@@ -265,6 +265,7 @@ function _renderContent(item: any) {
   );
 }
 
+
 const MeritCard = (props:any) => {
   return (
     <Container>

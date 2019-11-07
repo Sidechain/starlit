@@ -7,7 +7,7 @@ interface Props {}
 function MeritScreen(props: Props) {
   const {} = props;
 
-  return <MeritCard />;
+  return <MeritCard/>;
 }
 
 export default MeritScreen;
