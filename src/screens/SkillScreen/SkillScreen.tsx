@@ -57,7 +57,7 @@ function SkillScreen(props: Props) {
             })}
         </View>
       </View>
-      <View style={{marginLeft: 50}}>
+      <View style={{flex: 1, justifyContent: 'flex-end'}}>
         <View>
           <Text style={{fontSize: 16}}>Magic Skills</Text>
           {skills
