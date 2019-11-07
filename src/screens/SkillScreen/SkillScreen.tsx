@@ -1,11 +1,12 @@
 import React from 'react';
-import {Text, View, ScrollView} from 'react-native';
-import {skills} from '../../utils/skillScreenData';
+import {Text, View, Button, ScrollView} from 'react-native';
+import { skills } from '../../utils/skillScreenData'
+
 
 interface Props {}
 
 function SkillScreen(props: Props) {
-  const {} = props;
+  const navigateToMerits = () => props.navigation.navigate('Merit')
 
   return (
     <ScrollView style={{flex: 1, flexWrap: 'wrap'}}>
@@ -15,6 +16,7 @@ function SkillScreen(props: Props) {
           {skills
             .filter(skill => skill.group === 'athletic')
             .map(skillGroup => {
+
               return <Text>{skillGroup.name}</Text>;
             })}
         </View>
@@ -23,6 +25,7 @@ function SkillScreen(props: Props) {
           {skills
             .filter(skill => skill.group === 'combat')
             .map(skillGroup => {
+
               return <Text>{skillGroup.name}</Text>;
             })}
         </View>
@@ -39,6 +42,7 @@ function SkillScreen(props: Props) {
           {skills
             .filter(skill => skill.group === 'knowledge')
             .map(skillGroup => {
+
               return <Text>{skillGroup.name}</Text>;
             })}
         </View>
@@ -47,16 +51,18 @@ function SkillScreen(props: Props) {
           {skills
             .filter(skill => skill.group === 'language')
             .map(skillGroup => {
+
               return <Text>{skillGroup.name}</Text>;
             })}
         </View>
       </View>
-      <View style={{marginLeft: 50}}>
+      <View style={{flex: 1, justifyContent: 'flex-end'}}>
         <View>
           <Text style={{fontSize: 16}}>Magic Skills</Text>
           {skills
             .filter(skill => skill.group === 'magic')
             .map(skillGroup => {
+
               return <Text>{skillGroup.name}</Text>;
             })}
         </View>
@@ -65,6 +71,7 @@ function SkillScreen(props: Props) {
           {skills
             .filter(skill => skill.group === 'tradition')
             .map(skillGroup => {
+
               return <Text>{skillGroup.name}</Text>;
             })}
         </View>
@@ -73,6 +80,7 @@ function SkillScreen(props: Props) {
           {skills
             .filter(skill => skill.group === 'perceptive')
             .map(skillGroup => {
+
               return <Text>{skillGroup.name}</Text>;
             })}
         </View>
@@ -89,6 +97,7 @@ function SkillScreen(props: Props) {
           {skills
             .filter(skill => skill.group === 'subterfuge')
             .map(skillGroup => {
+
               return <Text>{skillGroup.name}</Text>;
             })}
         </View>
@@ -97,9 +106,11 @@ function SkillScreen(props: Props) {
           {skills
             .filter(skill => skill.group === 'wilderness')
             .map(skillGroup => {
+
               return <Text>{skillGroup.name}</Text>;
             })}
         </View>
+        <Button title="Submit and go to Merits" onPress={navigateToMerits} />
       </View>
     </ScrollView>
   );
