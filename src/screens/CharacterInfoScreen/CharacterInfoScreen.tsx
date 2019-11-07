@@ -1,5 +1,5 @@
-import React, {useState, Component} from 'react';
-import {View, TouchableOpacity, ScrollView, Text, Button} from 'react-native';
+import React, {useState} from 'react';
+import {View, ScrollView, Button} from 'react-native';
 
 import CharacterImage from '../../components/CharacterImage';
 import NameField from '../../components/NameField';
