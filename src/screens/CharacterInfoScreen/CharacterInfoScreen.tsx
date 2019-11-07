@@ -22,19 +22,23 @@ function CharacterInfoScreen(props: Props) {
   const navigateToAttribute = () => props.navigation.navigate('Attribute')
 
   return (
-    <ScrollView style={{flex: 1, alignSelf: 'center'}}>
-      <CharacterImage />
-      <NameField setName={setName} />
-      <HeritageField setHeritage={setHeritage} />
-      <ParagonPrimalField
-        heritage={heritage}
-        setParagon={setParagon}
-        setPrimal={setPrimal}
-        setSeason={setSeason}
-      />
-      <BackgroundField setBackground={setBackground} />
-      <ArchetypeField setArchetype={setArchetype} />
-      <Button title="Submit and go to Attributes" onPress={navigateToAttribute}/>
+    <ScrollView>
+      <View style={{flex: 1}}>
+        <View style={{alignSelf: 'center'}}>
+          <CharacterImage />
+        </View>
+        <NameField setName={setName} />
+        <HeritageField setHeritage={setHeritage} />
+        <ParagonPrimalField
+          heritage={heritage}
+          setParagon={setParagon}
+          setPrimal={setPrimal}
+          setSeason={setSeason}
+        />
+        <BackgroundField setBackground={setBackground} />
+        <ArchetypeField setArchetype={setArchetype} />
+        <Button title="Submit and go to Attributes" onPress={navigateToAttribute}/>
+      </View>
     </ScrollView>
   );
 }

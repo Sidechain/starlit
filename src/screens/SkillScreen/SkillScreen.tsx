@@ -1,6 +1,5 @@
 import React from 'react';
-import {Text, View, Button, TouchableOpacity, ScrollView} from 'react-native';
-import { TextField } from 'react-native-material-textfield';
+import {Text, View, Button, ScrollView} from 'react-native';
 import { skills } from '../../utils/skillScreenData'
 
 
