@@ -1,6 +1,5 @@
 import React, {useState, Component} from 'react';
 import {View, TouchableOpacity, ScrollView, Text, Button} from 'react-native';
-import { NavigationActions } from 'react-navigation';
 
 import CharacterImage from '../../components/CharacterImage';
 import NameField from '../../components/NameField';
@@ -24,7 +23,6 @@ function CharacterInfoScreen(props: Props) {
 
   return (
     <ScrollView style={{flex: 1, alignSelf: 'center'}}>
-      <Button title="Submit" onPress={navigateToAttribute}/>
       <CharacterImage />
       <NameField setName={setName} />
       <HeritageField setHeritage={setHeritage} />
@@ -36,6 +34,7 @@ function CharacterInfoScreen(props: Props) {
       />
       <BackgroundField setBackground={setBackground} />
       <ArchetypeField setArchetype={setArchetype} />
+      <Button title="Submit and go to Attributes" onPress={navigateToAttribute}/>
     </ScrollView>
   );
 }
