@@ -31,12 +31,21 @@ const CharacterCreationStack = createStackNavigator({
   },
   Attribute: {
     screen: AttributeScreen,
+    navigationOptions: {
+      header: null
+    }
   },
   Skill: {
     screen: SkillScreen,
+    navigationOptions: {
+      header: null
+    }
   },
   Merit: {
     screen: MeritScreen,
+    navigationOptions: {
+      header: null
+    }
   },
   
 });
