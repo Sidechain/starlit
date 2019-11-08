@@ -7,6 +7,7 @@ import HeritageField from '../../components/HeritageField';
 import ParagonPrimalField from '../../components/ParagonPrimalField';
 import BackgroundField from '../../components/SceneField';
 import ArchetypeField from '../../components/ArchetypeField';
+import {constants} from '../../constants/constants';
 
 interface Props {}
 
@@ -19,11 +20,15 @@ function CharacterInfoScreen(props: Props) {
   const [season, setSeason] = useState('');
   const [primal, setPrimal] = useState('');
 
-  const navigateToAttribute = () => props.navigation.navigate('Attribute')
+  const navigateToAttribute = () => props.navigation.navigate('Attribute');
 
   return (
-    <ScrollView>
-      <View style={{flex: 1}}>
+    <ScrollView style={{backgroundColor: 'black'}}>
+      <View
+        style={{
+          flex: 1,
+          margin: constants.screenPadding,
+        }}>
         <View style={{alignSelf: 'center'}}>
           <CharacterImage />
         </View>
@@ -37,7 +42,10 @@ function CharacterInfoScreen(props: Props) {
         />
         <BackgroundField setBackground={setBackground} />
         <ArchetypeField setArchetype={setArchetype} />
-        <Button title="Submit and go to Attributes" onPress={navigateToAttribute}/>
+        <Button
+          title="Submit and go to Attributes"
+          onPress={navigateToAttribute}
+        />
       </View>
     </ScrollView>
   );

@@ -21,11 +21,21 @@ const ParagonPrimalField = (props: Props) => {
             label="Primal Year"
             data={primals}
             onChangeText={props.setPrimal}
+            textColor="white"
+            baseColor="gray"
+            itemColor="gray"
+            selectedItemColor="white"
+            pickerStyle={{backgroundColor: 'black'}}
           />
           <Dropdown
             label="Season"
             data={seasons}
             onChangeText={props.setSeason}
+            textColor="white"
+            baseColor="gray"
+            itemColor="gray"
+            selectedItemColor="white"
+            pickerStyle={{backgroundColor: 'black'}}
           />
         </>
       )}
@@ -37,6 +47,11 @@ const ParagonPrimalField = (props: Props) => {
             label="Paragon"
             data={paragons}
             onChangeText={props.setParagon}
+            textColor="white"
+            baseColor="gray"
+            itemColor="gray"
+            selectedItemColor="white"
+            pickerStyle={{backgroundColor: 'black'}}
           />
         </>
       )}
