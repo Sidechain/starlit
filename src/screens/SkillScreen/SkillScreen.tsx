@@ -2,6 +2,7 @@ import React from 'react';
 import {Text, View, Button, ScrollView} from 'react-native';
 import {skills} from '../../utils/skillScreenData';
 import {constants} from '../../constants/constants';
+import SkillAccordion from '../../components/SkillAccordion';
 
 interface Props {}
 
@@ -12,7 +13,8 @@ function SkillScreen(props: Props) {
     <ScrollView style={{flex: 1, margin: constants.screenPadding}}>
       <View>
         <View>
-          <Text style={{fontSize: 16}}>Athletics Skills</Text>
+          <SkillAccordion title="Athletics" />
+          {/* <Text style={{fontSize: 16}}>Athletics Skills</Text>
           {skills
             .filter(skill => skill.group === 'athletic')
             .map(skillGroup => {
@@ -99,7 +101,7 @@ function SkillScreen(props: Props) {
             .filter(skill => skill.group === 'wilderness')
             .map(skillGroup => {
               return <Text>{skillGroup.name}</Text>;
-            })}
+            })} */}
         </View>
         <Button title="Submit and go to Merits" onPress={navigateToMerits} />
       </View>
