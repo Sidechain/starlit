@@ -7,7 +7,9 @@ import SkillAccordion from '../../components/SkillAccordion';
 interface Props {}
 
 function SkillScreen(props: Props) {
-  const navigateToMerits = () => props.navigation.navigate('Merit');
+  const characterInfo = props.navigation.getParam('characterInfo')
+  const attributeData = props.navigation.getParam('attributeData')
+  const navigateToMerits = () => props.navigation.navigate('Merit', {characterInfo: characterInfo, attributeData: attributeData, skills: "No skills yet"})
 
   return (
     <ScrollView style={{flex: 1, margin: constants.screenPadding}}>

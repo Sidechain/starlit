@@ -51,9 +51,26 @@ const AttributeField = (props: Props) => {
     etherRecovery: will > 10 ? attributeModifiers.willMod : 1,
     woundRecovery: constitution > 10 ? attributeModifiers.conMod : 1,
   };
+  const characterInfo = props.navigationData.getParam('characterInfo')
 
-  const navigateToSkill = () => props.navigationData.navigate('Skill');
+  const navigateToSkill = () => props.navigationData.navigate('Skill', {characterInfo: characterInfo, attributeData: attributeData})
+  
+  const attributeData = {
+    attributeScores: {
+      agility: agility,
+      charisma: charisma,
+      consitution: constitution,
+      dexterity: dexterity,
+      intelligence: intelligence,
+      perception: perception,
+      strength: strength,
+      will: will
+    },
+    derivedAttributes: derivedAttributes,
+    attributeMods: attributeModifiers
+  }
 
+  
   return (
     <View
       style={{
