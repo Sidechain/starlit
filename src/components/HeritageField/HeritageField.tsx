@@ -1,11 +1,11 @@
 import React from 'react';
-import { Dropdown } from 'react-native-material-dropdown';
+import {Dropdown} from 'react-native-material-dropdown';
 
 interface Props {
-  setHeritage: any
+  setHeritage: any;
 }
 
-const HeritageField = (props:Props) => {
+const HeritageField = (props: Props) => {
   let raceData = [
     {
       value: 'Human',
@@ -17,7 +17,18 @@ const HeritageField = (props:Props) => {
       value: 'Orc',
     },
   ];
-  return <Dropdown label="Cultural Heritage" data={raceData} onChangeText={props.setHeritage} />;
+  return (
+    <Dropdown
+      label="Cultural Heritage"
+      data={raceData}
+      onChangeText={props.setHeritage}
+      textColor="white"
+      baseColor="gray"
+      itemColor="gray"
+      selectedItemColor="white"
+      pickerStyle={{backgroundColor: 'black'}}
+    />
+  );
 };
 
 export default HeritageField;
