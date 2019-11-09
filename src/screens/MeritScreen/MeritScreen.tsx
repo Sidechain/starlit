@@ -19,7 +19,7 @@ function MeritScreen(props: Props) {
           backgroundColor: colors.dark,
         }}>
         {merits.map((item, index) => {
-          return <MeritCard title={item.title} content={item.content} />;
+          return <MeritCard title={item.title} content={item.content} navigationData={props.navigation}/>;
         })}
       </View>
     </ScrollView>

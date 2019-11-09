@@ -8,6 +8,7 @@ import {colors} from '../../constants/colors';
 interface props {
   title: String;
   content: String;
+  navigationData: Object;
 }
 
 class MeritCard extends Component<props> {
