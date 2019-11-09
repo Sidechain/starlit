@@ -13,7 +13,17 @@ function SkillScreen(props: Props) {
     <ScrollView style={{flex: 1, margin: constants.screenPadding}}>
       <View>
         <View>
-          <SkillAccordion title="Athletics" />
+          <SkillAccordion title="Athletics" skillGroup={skills.filter(skill => skill.group === 'athletic')}/>
+          <SkillAccordion title="Combat" skillGroup={skills.filter(skill => skill.group === 'combat')}/>
+          <SkillAccordion title="Creative" skillGroup={skills.filter(skill => skill.group === 'creative')}/>
+          <SkillAccordion title="Knowledge" skillGroup={skills.filter(skill => skill.group === 'knowledge')}/>
+          <SkillAccordion title="Language" skillGroup={skills.filter(skill => skill.group === 'language')}/>
+          <SkillAccordion title="Magic" skillGroup={skills.filter(skill => skill.group === 'magic')}/>
+          <SkillAccordion title="Magic Traditions" skillGroup={skills.filter(skill => skill.group === 'tradition')}/>
+          <SkillAccordion title="Perceptive Skills" skillGroup={skills.filter(skill => skill.group === 'perceptive')}/>
+          <SkillAccordion title="Social" skillGroup={skills.filter(skill => skill.group === 'social')}/>
+          <SkillAccordion title="Subterfuge" skillGroup={skills.filter(skill => skill.group === 'subterfuge')}/>
+          <SkillAccordion title="Wilderness" skillGroup={skills.filter(skill => skill.group === 'wilderness')}/>
           {/* <Text style={{fontSize: 16}}>Athletics Skills</Text>
           {skills
             .filter(skill => skill.group === 'athletic')

@@ -3,6 +3,7 @@ import {List, Checkbox} from 'react-native-paper';
 
 interface props {
   title: String;
+  skillGroup: any;
 }
 
 class SkillAccordion extends React.Component<props> {
@@ -21,7 +22,7 @@ class SkillAccordion extends React.Component<props> {
         title={this.props.title}
         left={props => <List.Icon {...props} icon="folder" />}>
         <List.Item title="First item" />
-        <List.Item title="Second item" />
+        {this.props.skillGroup.map(skill => <List.Item title={skill.name} />)}
       </List.Accordion>
     );
   }
