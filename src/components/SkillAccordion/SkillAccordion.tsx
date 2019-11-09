@@ -21,7 +21,6 @@ class SkillAccordion extends React.Component<props> {
       <List.Accordion
         title={this.props.title}
         left={props => <List.Icon {...props} icon="folder" />}>
-        <List.Item title="First item" />
         {this.props.skillGroup.map(skill => <List.Item title={skill.name} />)}
       </List.Accordion>
     );
