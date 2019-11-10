@@ -1,200 +1,80 @@
-import React from 'react';
-import {
-  Container,
-  Header,
-  Content,
-  Accordion,
-  Text,
-  View,
-  CheckBox,
-} from 'native-base';
-
-import {TouchableOpacity, ScrollView} from 'react-native';
+import React, {Component} from 'react';
+import {Text} from 'native-base';
+import {TouchableOpacity, StyleSheet} from 'react-native';
+import CardFlip from 'react-native-card-flip';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import {colors} from '../../constants/colors';
 
-const dataArray = [
-  {
-    title: 'Acrobatic I-III',
-    avatar: 'snowboarding',
-    content: 'Add 1, 2, or 4 to your Acrobatics rolls.',
-  },
-  {
-    title: 'Ally (II)',
-    avatar: 'handshake',
-    content: '',
-  },
-  {
-    title: 'Ancient Bloodline',
-    avatar: 'tint',
-    content:
-      'As a Mir of a bloodline of yore, you have a +2 bonus when socially interacting with tairethi or mir that knows of your heritage.',
-  },
-  {
-    title: 'Animal Affinity',
-    avatar: 'otter',
-    content:
-      'Animals are more positively inclined towards the character. Add +1 when socially interacting with animals.',
-  },
-  {
-    title: 'Animal Companion I-III',
-    avatar: 'dog',
-    content: '',
-  },
-  {
-    title: 'Artist I-III',
-    avatar: 'broom',
-    content:
-      'Add 1, 2, or 4 to rolls of one creative skill of your choice. This merit may be taken more times, each time for a different skill.',
-  },
-  {
-    title: 'Artistic (II)',
-    avatar: 'brush',
-    content: 'Add +1 to all creative skill rolls.',
-  },
-  {
-    title: 'Athletic I-III',
-    avatar: 'volleyball-ball',
-    content: 'Add 1, 2, or 4 to your Athletics rolls.',
-  },
-  {
-    title: 'By Any Means Necessary I-IV',
-    avatar: 'fist-raised',
-    content:
-      'Each instance of this merit allows a character to spend an extra exertion point per action.',
-  },
-  {
-    title: 'Charismatic (II)',
-    avatar: 'certificate',
-    content: 'Add +1 to all social skill rolls.',
-  },
-  {
-    title: 'Combatant (II)',
-    avatar: 'chess',
-    content: 'Add +1 to all combat skill rolls.',
-  },
-  {
-    title: 'Contact',
-    avatar: 'hands-helping',
-    content: '',
-  },
-  {
-    title: 'Coolheaded I-III',
-    avatar: 'snowflake',
-    content: 'Add 1, 2, or 4 to your Initiative rolls.',
-  },
-  {
-    title: 'Great Exertion II-III',
-    avatar: 'star-of-life',
-    content:
-      'Each instance adds +1 to the bonus granted when spending an exertion point.',
-  },
-  {
-    title: 'Enchanted Item II or IV',
-    avatar: 'magic',
-    content:
-      'The character has an enchanted item in its possession. The II instance of this merit grants the character a Civilian grade enchanted item, and the IV instance grants a Professional grade item. This item is created together with the GM.',
-  },
-  {
-    title: 'Extraordinary Attribute I-IV',
-    avatar: 'haykal',
-    content:
-      'Add 1, 2, 3, or 4 to an attribute. This merit may be taken more times, each time for a different attribute. Attributes may, however, never exceed 20.',
-  },
-  {
-    title: 'Fame (I-III)',
-    avatar: 'star',
-    content: '',
-  },
-  {
-    title: 'Fleet of Foot I-III',
-    avatar: 'running',
-    content: 'Add 1, 2, or 3 metres to your movement speed.',
-  },
-  {
-    title: 'Intellectual (II)',
-    avatar: 'university',
-    content: 'Add +1 to all knowledge skill rolls.',
-  },
-  {
-    title: 'Knowledgeable I-III',
-    avatar: 'book-reader',
-    content:
-      'Add 1, 2, or 4 to rolls of one knowledge skill. This merit may be taken more times, each time for a different knowledge skill.',
-  },
-  {
-    title: 'Linguist I-III',
-    avatar: 'comments',
-    content:
-      'Add 1, 2, or 4 to one language skill. This merit may be taken more times, each time for a different language.',
-  },
-  {
-    title: 'Occultist (II)',
-    avatar: 'crow',
-    content: 'Add +1 to all magic skill rolls, if they are developed.',
-  },
-  {
-    title: 'Mentor (III)',
-    avatar: 'glasses',
-    content: '',
-  },
-  {
-    title: 'Natural Immunity I-II',
-    avatar: 'leaf',
-    content:
-      'Add 2 or 4 to the onset difficulty for disease and poison. (See the rules for Poison and Disease).',
-  },
-];
-
-function _renderHeader(item: any, expanded: any) {
-  return (
-    <View
-      style={{
-        flexDirection: 'row',
-        padding: 10,
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        backgroundColor: '#A9DAD6',
-      }}>
-      <CheckBox />
-      <Text style={{fontWeight: '600'}}> {item.title}</Text>
-      {expanded ? (
-        <Icon style={{fontSize: 18}} name="chevron-circle-up" />
-      ) : (
-        <Icon style={{fontSize: 18}} name="chevron-circle-down" />
-      )}
-    </View>
-  );
+interface props {
+  title: String;
+  content: String;
+  navigationData: Object;
 }
 
-function _renderContent(item: any) {
-  return (
-    <Text
-      style={{
-        backgroundColor: '#e3f1f1',
-        padding: 10,
-        fontStyle: 'italic',
-      }}>
-      {item.content}
-    </Text>
-  );
+class MeritCard extends Component<props> {
+  render() {
+    return (
+      <CardFlip style={styles.flipCardHolder} ref={card => (this.card = card)}>
+        <TouchableOpacity
+          style={styles.cardFront}
+          onPress={() => this.card.flip()}>
+          <Text style={{fontFamily: 'monospace'}}>{this.props.title}</Text>
+          <Icon style={styles.arrow} name="angle-right" />
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.cardBack}
+          onPress={() => this.card.flip()}>
+          <Text>{this.props.content}</Text>
+          <Icon style={styles.arrow} name="angle-left" />
+        </TouchableOpacity>
+      </CardFlip>
+    );
+  }
 }
 
-const MeritCard = () => {
-  return (
-    <ScrollView style={{flex: 1}}>
-      <Container>
-        <Content padder style={{backgroundColor: 'white'}}>
-          <Accordion
-            dataArray={dataArray}
-            animation={true}
-            expanded={true}
-            renderHeader={_renderHeader}
-            renderContent={_renderContent}
-          />
-        </Content>
-      </Container>
-    </ScrollView>
-  );
-};
+const styles = StyleSheet.create({
+  flipCardHolder: {
+    width: 300,
+    height: 100,
+    marginVertical: 10,
+  },
+  cardFront: {
+    flex: 1,
+    padding: 10,
+    backgroundColor: colors.primary,
+    borderColor: 'black',
+    borderStyle: 'solid',
+    borderWidth: 2,
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    elevation: 12,
+    // This is the bs code for ios, but who runs ios?!
+    // shadowColor: '#000',
+    // shadowOffset: {
+    //   width: 0,
+    //   height: 12,
+    // },
+    // shadowOpacity: 0.58,
+    // shadowRadius: 16.0,
+  },
+  cardBack: {
+    flex: 1,
+    padding: 10,
+    backgroundColor: colors.light,
+    borderColor: 'black',
+    borderStyle: 'solid',
+    borderWidth: 2,
+    borderRadius: 10,
+    elevation: 12,
+  },
+  arrow: {
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+    padding: 10,
+    fontSize: 24,
+  },
+});
 
 export default MeritCard;

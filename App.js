@@ -1,15 +1,14 @@
-import React from 'react';
-import {AppContainer} from './src/utils/navigationRoutes';
-import {Provider} from 'react-redux';
-import store from './src/redux/reducers/index';
+import React from 'react'
+import { AppContainer } from './src/utils/navigationRoutes'
+import { constants } from './src/constants/constants'
 
 export default class App extends React.Component {
-  raiseAgility = () => {};
+  raiseAgility = () => {}
   render() {
     return (
       <Provider store={store}>
         <AppContainer />
       </Provider>
-    );
+    )
   }
 }

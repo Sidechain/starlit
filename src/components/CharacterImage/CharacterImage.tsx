@@ -23,8 +23,10 @@ const CharacterImage = () => {
           ) / 2,
         width: Dimensions.get('window').width * 0.5,
         height: Dimensions.get('window').width * 0.5,
-        backgroundColor: '#f00',
         justifyContent: 'center',
+        borderColor: 'white',
+        borderStyle: 'solid',
+        borderWidth: 5,
         alignItems: 'center',
         overflow: 'hidden',
       }}
