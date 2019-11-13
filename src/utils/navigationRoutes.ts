@@ -7,6 +7,7 @@ import MeritScreen from '../../src/screens/MeritScreen';
 import SkillScreen from '../../src/screens/SkillScreen';
 import StartScreen from '../../src/screens/StartScreen';
 import CharacterCreationScreen from '../screens/CharacterCreationScreen';
+import SummaryScreen from '../screens/SummaryScreen';
 
 const AppNavigator = createBottomTabNavigator(
   {
@@ -47,7 +48,12 @@ const CharacterCreationStack = createStackNavigator({
       header: null
     }
   },
-  
+  Summary: {
+    screen: SummaryScreen,
+    navigationOptions: {
+      header: null
+    }
+  }
 });
 
 export const CharacterCreationStackContainer = createAppContainer(CharacterCreationStack)
