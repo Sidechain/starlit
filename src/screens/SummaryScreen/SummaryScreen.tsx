@@ -5,7 +5,7 @@ interface Props {}
 function SummaryScreen(props: Props) {
 
     return (
-      <Text>WOW, YOU KINDA MADE A CHARACTER! LOOK AT ALL THOSE STATS</Text>  
+      <Text>WOW, YOU KINDA MADE A CHARACTER! LOOK AT ALL THOSE STATS... Eeeerhm... Yeah...</Text>
     )
 }
 

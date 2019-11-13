@@ -7,8 +7,8 @@ import {colors} from '../../constants/colors';
 interface Props {}
 
 function MeritScreen(props: Props) {
-  const characterInfo = props.navigation.getParam('characterInfo')
-  const attributeData = props.navigation.getParam('attributeData')
+  const characterInfo = props.navigation.getParam('characterInfo');
+  const attributeData = props.navigation.getParam('attributeData');
   const navigateToSummary = () => props.navigation
     .navigate('Summary', {
         characterInfo: characterInfo,
