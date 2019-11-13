@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {List, Checkbox} from 'react-native-paper';
+import {List} from 'react-native-paper';
 
 interface props {
   title: String;
