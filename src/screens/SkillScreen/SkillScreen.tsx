@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, Button, ScrollView} from 'react-native';
+import {View, Button, ScrollView} from 'react-native';
 import {skills} from '../../utils/skillScreenData';
 import {constants} from '../../constants/constants';
 import SkillAccordion from '../../components/SkillAccordion';
