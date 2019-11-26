@@ -10,6 +10,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@types/axios": "^0.14.0",
     "@types/react-native-material-dropdown": "^0.11.3",
     "@types/react-native-material-textfield": "^0.15.0",
     "@types/react-native-vector-icons": "^6.4.4",
